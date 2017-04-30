@@ -1,0 +1,23 @@
+version: '2'
+services:
+  web:
+    image: richarvey/nginx-php-fpm:latest
+    links:
+      - db
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./var/log/nginx:/var/log/nginx
+      - ./etc/php:/usr/local/etc
+      - ./etc/nginx:/etc/nginx
+      - ./var/www/html:/var/www/html
+      - ./tmp:/host/tmp
+  db:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+    volumes:
+      - ./var/lib/mysql:/var/lib/mysql
