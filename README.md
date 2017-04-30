@@ -12,3 +12,11 @@ sudo docker run -d -P --name db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret \
 -v /home/ilhanet_lan/docker-lemp/var/lib/mysql:/var/lib/mysql \
 mariadb:latest
 
+sudo docker run -d -P --name teste -p 22 \
+-e DEV_USER=dev \
+-e DEV_PASSWORD=secret \
+-e ROOT_PASSWORD=secret \
+-e POSTGRES_USER=postgres \
+-e POSTGRES_PASSWORD=secret \
+zyc9012/php-nginx-postgres:latest
+
