@@ -35,6 +35,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 
 #RUN wget "https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-en.php" -O /www/adminer.php
 
-EXPOSE 8080, 443, 22, 5432
+EXPOSE 8080 443 22 5432
 
 CMD ["run.sh"]
