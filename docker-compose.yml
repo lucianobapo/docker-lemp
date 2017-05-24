@@ -3,19 +3,20 @@ services:
   web:
 #    image: zyc9012/php-nginx-postgres:latest
 #    build: .
-    image: lucianobp/lemp-alpine-php-postgre:0.1
+    image: lucianobp/lemp-alpine-php-postgre:0.3
     container_name: lemp
     ports:
       - 22
-      - 8080
+      - 8080:8080
       - 443
-      - 5432
+      - 5432:5432
     volumes:
       - ./var/log:/var/log
       - ./etc/php7:/etc/php7
       - ./etc/nginx:/etc/nginx
       - ./var/www/html:/www
       - /home/luciano/code:/code
+#      - ./code:/code
       - ./tmp:/host/tmp
       - ./var/lib/postgresql:/var/lib/postgresql
     environment:

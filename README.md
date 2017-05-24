@@ -28,3 +28,17 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
+docker rmi $(docker images |awk '{print $3}')
+
+docker kill $(docker ps |awk '{print $1}')
+
+docker volume rm $(docker volume ls |awk '{print $2}')
+
+CREATE USER erpnetv5 WITH PASSWORD erpnetv5;
+CREATE DATABASE erpnetv5;
+GRANT ALL PRIVILEGES ON DATABASE erpnetv5 to erpnetv5;
+
+CREATE USER "tigresav_ppm" WITH PASSWORD 'tigresav_ppm';
+CREATE DATABASE "tigresav_ppm";
+GRANT ALL PRIVILEGES ON DATABASE "tigresav_ppm" to "tigresav_ppm";
+
