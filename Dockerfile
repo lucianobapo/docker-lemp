@@ -6,6 +6,7 @@ LABEL Description="Webserver"
 
 ENV PGDATA=/var/lib/postgresql/data
 
+
 RUN apk update && apk upgrade && apk add --no-cache \
       s6 \
       su-exec \
