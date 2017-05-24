@@ -24,8 +24,8 @@ RUN apk update && apk upgrade && apk add --no-cache \
     ssh-keygen -A && \
     rm -f /var/cache/apk/*
 
-COPY etc/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY etc/php7/php-fpm.conf /etc/php7/php-fpm.conf
+#COPY etc/nginx/nginx.conf /etc/nginx/nginx.conf
+#COPY etc/php7/php-fpm.conf /etc/php7/php-fpm.conf
 COPY tmp/run.sh /usr/local/bin/run.sh
 COPY tmp/s6.d /etc/s6.d
 
