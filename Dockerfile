@@ -1,4 +1,4 @@
-FROM php:7.1-alpine
+FROM php:7.1-fpm-alpine
 
 MAINTAINER Luciano Porto <luciano.bapo@gmail.com> version: 0.4
 
