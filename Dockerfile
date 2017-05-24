@@ -17,6 +17,7 @@ RUN apk update && apk upgrade && apk add --no-cache \
       curl \
       nginx \
       postgresql && \
+    docker-php-ext-install ctype json mbstring pdo session && \
     mkdir -p /www && \
     mkdir -p $PGDATA && chmod 0755 $PGDATA && \
     mkdir -p /run/postgresql && chmod g+s /run/postgresql && \
